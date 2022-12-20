@@ -381,7 +381,7 @@ def get_adjective_stats(latitude, longitude, start_date, end_date, years):
     # get stats and return them
     return bool_to_stats(daf)
 
-def get_adjective_stats_loc(country, loc_query, start_date_iso, end_date_iso):
+def get_adjective_stats_loc(loc_query, start_date_iso, end_date_iso):
     three_dict = get_lat_long(loc_query)
     try:
         start_date = datetime.datetime.fromisoformat(start_date_iso[0:10])

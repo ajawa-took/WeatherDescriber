@@ -126,18 +126,16 @@
             </em>
             </p>
             <p class="p1">
-            <strong>PositionStack</strong>
+            <strong>LocationIQ</strong>
             <br>
-            <em>The positionstack API was built to offer a straightforward and reliable solution for forward and reverse geocoding, covering more than 2 billion places and addresses worldwide.</em>
-            <br>
-            <a href=>https://positionstack.com/documentation</a>
+            <em><a href="https://locationiq.com">LocationIQ</a>: Affordable, Scalable & Reliable location services since 2013.</em>
             </p>
         </p>
     </div>
     
     <script type="text/javascript">
         // getting references
-        var country_field = d3.select("#country");
+        // var country_field = d3.select("#country");
         var location_field = d3.select("#location");
         var start_date_field = d3.select("#start_date");
         var end_date_field = d3.select("#end_date");
@@ -146,16 +144,16 @@
         var seasons_link_thing = d3.select("#seasons-link");
 
         // global variables to hold 4 inputs - i'm sure this is kludge
-        var country_val = "";
+        //var country_val = "";
         var location_val = "";
         var start_date_val = "";
         var end_date_val = "";
 
         // functions linking input fields to their variables
-        country_field.on("change", function() {
-            country_val = d3.event.target.value;
-            console.log("country", country_val);
-        });
+        // country_field.on("change", function() {
+        //     country_val = d3.event.target.value;
+        //     console.log("country", country_val);
+        // });
 
         location_field.on("change", function() {
             location_val = d3.event.target.value;
@@ -174,7 +172,8 @@
 
         // the function that fills urls
         the_button.on("click", function() {
-            var urrl = country_val + "/" + location_val + "/" + start_date_val + "/" + end_date_val;
+            // var urrl = country_val + "/" + location_val + "/" + start_date_val + "/" + end_date_val;
+            var urrl = location_val + "/" + start_date_val + "/" + end_date_val;
             history_link_thing.attr("href", "pretty/v1.0/history_loc/"+urrl );
             seasons_link_thing.attr("href", "seasons/"+urrl );
         });
