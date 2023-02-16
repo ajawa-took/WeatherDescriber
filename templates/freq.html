@@ -26,7 +26,7 @@
         over twenty years, have had each weather type.
     </p>
     <div class="container-fluid">
-    <div class="row">
+    <div class="row flex-wrap">
         <div class="col-3 plot-area" id="temp-chart"></div>
         <div class="col-3 plot-area" id="bar-chart"></div>
         <div class="col-3 plot-area" id="cloud-chart"></div>
@@ -37,8 +37,9 @@
     <script src="{{ url_for('static', filename='freq.js') }}"></script>
     {% block javascript %}
 	<script>
-        console.log("jinja script-in-html running")
-        data = JSON.parse({{ datajason | tojson }})
+        console.log("jinja script-in-html running");
+        data = JSON.parse({{ datajason | tojson }});
+        console.log({{ datajason | tojson }});
         temp_chart(data['temp'], "temp-chart", 
                     "Historical days by temperature",
                     ['blue', 'green', 'gold', 'red']);

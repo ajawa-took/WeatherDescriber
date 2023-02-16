@@ -11,16 +11,28 @@ function temp_chart(temp_data, divid, title, colors){
         values: temp_data['values'],
         'marker': {
         colors: colors},
-        type: "pie"
+        type: "pie",
+        hoverinfo: 'label+percent',
+        textinfo: "label",
      };
      var layout = {
         title: title,
-        paper_bgcolor: "tan"
+        paper_bgcolor: "tan",
+        margin: {
+            l: 10,
+            r: 10,
+            b: 10,
+            t: 50,
+            pad: 10
+          },
+        legend: {
+            "orientation": "h",
+            font: {size: 16},
+        }
     };
-    Plotly.newPlot(divid, [trace], layout);
+    var config = {responsive: true};
+    Plotly.newPlot(divid, [trace], layout, config);
 };
-
-console.log("i am 6");
 
 function bar_chart(data, divid, title){
     var trace = {
@@ -31,10 +43,16 @@ function bar_chart(data, divid, title){
 
     var layout = {
         title: title,
-        yaxis: {title: "Fraction of historical days"},
+        yaxis: {
+            title: "Fraction of historical days", 
+            range: [0, 1],
+            tickformat: ".0%"
+        },
         paper_bgcolor: "tan"
     };
 
-    Plotly.newPlot(divid, [trace], layout);
+    var config = {responsive: true};
+
+    Plotly.newPlot(divid, [trace], layout, config);
 
 }

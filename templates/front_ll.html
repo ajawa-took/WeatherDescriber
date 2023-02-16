@@ -49,9 +49,6 @@
 
 <body>
     <h1 class="p1">Get your weather history here!</h1>
-    <p class="p1">
-        Please fill in the boxes below:
-    </p>
     <div>
 
 <!-- --------------------------- 2022-12-21 RL ----- 
@@ -308,15 +305,8 @@
     <div>
         <p></p>
         <p>
-            <button id="get_links" class="button1">Generate Link</button>
+            <button id="get_links" class="button1">Describe!</button>
         </p>
-    <h1 class="p1">
-    <a id="history-link">Go to Weather History JSON</a>
-    <!-- <a><button id="history-link" class="button2">Go to Weather JSON</button></a> -->
-    </h1>
-    <!-- <p>
-    <a id="seasons-link">Seasons</a>
-    </p> -->
     </div>
 
     <div>
@@ -418,8 +408,7 @@
         // the function that fills urls
         the_button.on("click", function() {
             var urrl = location_val + "/" + start_year_val + "-" + start_month_val + "-" + start_day_val + "/" + end_year_val + "-" + end_month_val + "-" + end_day_val;
-            history_link_thing.attr("href", "pretty/v1.0/history_loc/"+urrl );
-            seasons_link_thing.attr("href", "seasons/"+urrl );
+            location.href = "pretty/v1.0/history_loc/"+urrl;
         });
 
     </script>
