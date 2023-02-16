@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+# side-quests and deprecated
+moot/
+# my notes to self
+ram/
+
 # Distribution / packaging
 .Python
 build/
