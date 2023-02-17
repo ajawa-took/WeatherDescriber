@@ -15,6 +15,8 @@
  - Error handling is acting weird, needs rethink and update.<br>
  For example, I'm getting the generic "new bug" message instead of bad-location, or (locally) no-internet messages. Dates error is still possible with drop-downs like 02/31.
 
+ - Read through code, add comments as needed.
+
  - Front-page hack should be replaced. Can flask redirect on the level of python instead of rendering an html template that calls js code that redirects? In the long run, maybe front page should be explanatory, with button links to describer and (not yet existing) seasons?
 
  - Replace dropdowns with real calendar date input forms.
