@@ -66,5 +66,5 @@ end_day_field.on("change", function() {
 // the function that fills urls
 the_button.on("click", function() {
     var urrl = location_val + "/" + start_year_val + "-" + start_month_val + "-" + start_day_val + "/" + end_year_val + "-" + end_month_val + "-" + end_day_val;
-    location.href = "../../../testing/"+urrl;
+    location.href = "../../../describer/"+urrl;
 });

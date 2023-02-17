@@ -7,72 +7,57 @@
 
  Major front end overhaul mid-february 2023, making the page responsive, and combining input and output into one page.
 
- In this commit, the new stuff is in the obfuscated "testing" app route, while the old routes contain mostly unchanged code. To access the new version, type location and dates directly into the url:
+
+## Todo 
+
+### <b>Explanatory paragraphs need rewriting.</b>
+
+### Error handling is acting weird, needs rethink and update.<br>
+ For example, I'm getting the generic "new bug" message instead of bad-location, or (locally) no-internet messages. Dates error is still possible with drop-downs like 02/31.
+
+### Front-page hack should be replaced. Can flask redirect on the level of python instead of rendering an html template that calls js code that redirects? In the long run, maybe front page should be explanatory, with button links to describer and (not yet existing) seasons?
+
+### Replace dropdowns with real calendar date input forms.
+
+### Add a flex-item-chart containing a map of the location; plotly? leaflet?
+
+### Add definitions of weather adjectives: on separate page? at the bottom of the page? as hovertext in charts?
 
 
-```
-/testing/<location>/<start_date_iso>/<end_date_iso>
-```
 
-like
+### Minor additions/beautification
 
-```
-testing/chicago/2023-08-01/2023-08-06
-```
-
-
-### Key changes
-
-- button redirects instead of generating a link, with the usual command-line up-directory syntax:
-```
-location.href = "../../../testing/"+urrl;
-```
-
-- out charts are packaged in a flex-container with
-```
-display: flex;
-flex-flow: row wrap;
-```
-that shuffle responsively, but remain a fixed size.
-for comparison, the plots in the old-route output now resize but don't shuffle, which seems worse.
-
-- the key to responsive plots is
-```
-var config = {responsive: true};
-```
-and
-```
-legend: { "orientation": "h" }
-```
-and not specifying dimensions in plotly js code, but yes specifying dimensions in the css style for the div containing the plot.
-
-- for a uniform look, input fields are now in similar flex-items, floating around te page responsively.
-
-## Next Todo 
-
-- Generate a sample of the data passed to make plots, and hord-code it into the front page, which should be slightly different than the main page: button url redirect won't need ".../", maybe slightly different wording of explanatory text.
-
-## Minor additions/beautification
-
- - Charts could use beautification, like dropping zeros from pie charts, or rotating them so that the zeros' labels aren't off the page.
+ - Charts could use beautification, like dropping zeros (and near-zeros?) from pie charts, or rotating them so that the zeros' labels aren't off the page. Also, remove underscore in "partly_coudy".
 
  - Colors could use beautification; maybe a non-white overall page background? Non-black text?
 
- - Explanatory paragraph could use re-writing, and needs restyling, currently super-ugly.
+ - <b>Explanatory paragraph could use restyling, currently super-ugly.</b>
 
- - Need to add a link to out github, and maybe to us elsewhere?
+ - Add a link to our github, and maybe to us elsewhere?
+
+
 
 ## Next Steps
 
- - Add space for season-clusters input and output.
+ - See how our adjective definitions compare to others: ask meteorologists? compare historical days to timeanddate.com ?
 
- - Polish season-clusters.
+ - Season clusters.
+	- Polish season-clusters.
+	- Add space for season-clusters input and output.
+	- Put all together
 
 
+ - Add a back-end database that stores data for locations and date ranges that have already been querried, to avoid unneeded API calls. 
+	- Simplest: if everything matches, no API calls needed at all, get datapack from storage.
+	- Make LocationAPI call; if longitude/latitude and daterange match, get datapack from storage.
+	- Make LocationAPI call; if longitude/lattitude match, get the dataframe output of
+```
+get_clean_weather(latitude, longitude, start_year, end_year)
+```
+from storage, then compute adjective frequencies for the new date range.
 
 
-
-
+ - Take adjective definitions out of the code, into a separate (easily editable) list or dictionary or json or somesuch.
 
 
 
