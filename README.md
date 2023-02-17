@@ -10,18 +10,18 @@
 
 ## Todo 
 
-### <b>Explanatory paragraphs need rewriting.</b>
+ - <b>Explanatory paragraphs need rewriting.</b>
 
-### Error handling is acting weird, needs rethink and update.<br>
+ - Error handling is acting weird, needs rethink and update.<br>
  For example, I'm getting the generic "new bug" message instead of bad-location, or (locally) no-internet messages. Dates error is still possible with drop-downs like 02/31.
 
-### Front-page hack should be replaced. Can flask redirect on the level of python instead of rendering an html template that calls js code that redirects? In the long run, maybe front page should be explanatory, with button links to describer and (not yet existing) seasons?
+ - Front-page hack should be replaced. Can flask redirect on the level of python instead of rendering an html template that calls js code that redirects? In the long run, maybe front page should be explanatory, with button links to describer and (not yet existing) seasons?
 
-### Replace dropdowns with real calendar date input forms.
+ - Replace dropdowns with real calendar date input forms.
 
-### Add a flex-item-chart containing a map of the location; plotly? leaflet?
+ - Add a flex-item-chart containing a map of the location; plotly? leaflet?
 
-### Add definitions of weather adjectives: on separate page? at the bottom of the page? as hovertext in charts?
+ - Add definitions of weather adjectives: on separate page? at the bottom of the page? as hovertext in charts?
 
 
 
