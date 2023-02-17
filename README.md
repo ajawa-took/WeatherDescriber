@@ -31,6 +31,8 @@
 
  - Charts could use beautification, like dropping zeros (and near-zeros?) from pie charts, or rotating them so that the zeros' labels aren't off the page. Also, remove underscore in "partly_coudy".
 
+ - Should chart titles be shorter, like "temperature"?
+
  - Colors could use beautification; maybe a non-white overall page background? Non-black text?
 
  - <b>Explanatory paragraph could use restyling, currently super-ugly.</b>
