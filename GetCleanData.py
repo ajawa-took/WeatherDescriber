@@ -4,7 +4,7 @@ import json
 import datetime
 import numpy as np
 # for position API
-import http.client, urllib.parse
+import http.client, urllib.parse, keys
 
 #       NotString errors will never be raised: flask passes everything along as a string
 #       otherwise, we'd have a problem with city, because that can be a zip code
@@ -51,7 +51,7 @@ class PositionAPIError(Exception):
 def get_lat_long(loc_query):
     url = "https://us1.locationiq.com/v1/search"
     data = {
-        'key': 'pk.f3c8f7bb9e1e54ea681318d511868a26',
+        'key': keys.location_key,
         'q': loc_query,
         'format': 'json'
     }
